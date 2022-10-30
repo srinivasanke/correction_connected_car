@@ -1,0 +1,52 @@
+<div *ngIf="!otpSuccess" class="login-container">
+    <div class="text-center logo-content">
+        <img src="/assets/images/logo-car.png">
+    </div>
+    <form class="form-container" [formGroup]="loginForm">
+        <h3 class="flex-1 login-title">Login</h3>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>EMAIL ADDRESS</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Enter Email Address">
+            <mat-error
+                *ngIf="loginForm.controls['email'].hasError('email') && !loginForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+
+        <div class="flex-1">
+            <mat-error *ngIf="loginForm.valid && invalidUserMsg">{{invalidUserMsg}}</mat-error>
+        </div>
+
+        <div class="otp-center">
+            <button type="button" mat-raised-button color="primary" [disabled]="loginForm.invalid"
+                (click)="otpGenerate()" class="loginbtn">Generate OTP</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="otpSuccess">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="login-otp">
+                    <img src="/assets/images/logo-car.png">
+                </div>
+                <div class="text-center my-4">
+                    <div class="text-muted">Enter 6-digit code</div>
+                </div>
+                <div class="my-4">
+                    <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="configOptions">
+                    </ng-otp-input>
+                </div>
+                <button id="button" class=" buttn btn btn-light w-50 mt-3 mb-4" (click)="loginOtp()"
+                    [ngClass]="btnStatus">
+                    {{ this.inputDigitLeft }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

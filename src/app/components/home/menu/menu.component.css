@@ -1,0 +1,23 @@
+.left-section{
+width: 100%;
+float: left;
+display: inline;
+font-weight: 500;
+height: 650px;
+}
+button.mat-menu-item {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+/* .menu-item {
+    color: #fff;
+}
+
+.main-menu {
+    margin-left: 40px;
+}
+
+.menu-text {
+    padding:3px;
+} */

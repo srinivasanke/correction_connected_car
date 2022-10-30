@@ -1,0 +1,151 @@
+.header-container {
+    background-color: #1679b9;
+    height: 75px;
+    width: 100%;
+}
+
+.logo-image {
+    height: 104px;
+    position: absolute;
+    margin-top: 14.5px;
+    width: 120px;
+    top: 0;
+}
+
+.image-content {
+    display: inline-block;
+    width: 120px;
+}
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 120px;
+}
+
+.title {
+    color: #fff;
+    padding-left: 15px;
+}
+
+.menu-item {
+    color: #fff;
+}
+
+.main-menu {
+    margin-left: 40px;
+}
+
+.menu-text {
+    padding:3px;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    display: block;
+    flex: 100%;
+}
+
+.right-section {
+    position: fixed;
+    right: 0;
+}
+
+.car-title {
+    margin-left: 45px;
+}
+.user-profile {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: inline-block;
+    width: 32px;
+    padding-top: 2px;
+    text-align: center;
+    margin-left: 26px;
+}
+
+.box-container {
+    margin-top: 30px;
+}
+
+.car-connected-info {
+    display: flex;
+    width: 67%;
+    margin-left: 50px;
+}
+
+.status-cirlce,.status-end {
+    border: 5px solid #1679b9;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 78px;
+}
+
+.text-center {
+    text-align: center;
+}
+.status-cirlce::before {
+    content: "";
+    border-top: 2px solid #1679b9;
+    position: absolute;
+    width: 80px;
+    margin-left: 84px;
+    margin-top: 40px;
+}
+
+.status-image {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+
+.status-msg {
+    padding: 10px;
+    color: #1679b9;
+}
+
+.total-history { 
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 30px;
+}
+
+.flex-1 {
+    flex: 100%;
+}
+
+.flex-2 {
+    flex: 50%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.label-field {
+    width: 50%;
+}
+
+.mb-10 { 
+    margin-bottom: 10px;
+}
+
+.section {
+    border-top: 1px solid #dbd2d2;
+    width: 550px;
+    position: absolute;
+    margin-top: 55px;
+    left: -20px;
+}
+
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: transparent;
+}

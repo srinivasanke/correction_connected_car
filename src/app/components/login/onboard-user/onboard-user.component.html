@@ -1,0 +1,37 @@
+<div class="login-container">
+    <div class="text-center logo-content">
+        <img src="/assets/images/logo-car.png">
+    </div>
+    <form class="form-container" [formGroup]="onboardingForm">
+        <h3 class="flex-1 login-title">Onboarding</h3>
+        <mat-form-field class="flex-1">
+            <mat-label>NAME</mat-label>
+            <input formControlName="firstName" matInput placeholder="Enter name">
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>EMAIL ADDRESS</mat-label>
+            <input formControlName="email" matInput placeholder="Enter Email Address">
+            <mat-error *ngIf="onboardingForm.controls['email'].hasError('email') && !onboardingForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="onboardingForm.controls['email'].hasError('required')">
+                Email is required
+              </mat-error>
+        </mat-form-field>
+        <div class="flex-1" formGroupName="car">
+            <mat-form-field class="flex-1">
+                <mat-label>DONGLE ID</mat-label>
+                <input formControlName="dongleId" matInput placeholder="Enter Dongle Id">
+            </mat-form-field>
+
+            <mat-form-field class="flex-1">
+                <mat-label>CHASSIS NUMBER (VIN)</mat-label>
+                <input formControlName="vin" matInput placeholder="Enter Chassis Number">
+            </mat-form-field>
+        </div>
+        <div class="text-center">
+            <button mat-raised-button color="primary" [disabled]="onboardingForm.invalid" (click)="onBoardUser()" class="login-btn">Proceed</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,119 @@
+<div class="login-container">
+    <div class="text-center logo-content">
+        <img src="/assets/images/logo-car.png">
+    </div>
+    <form class="form-container" [formGroup]="registrationForm">
+        <h3 class="flex-1 login-title">Create New Account</h3>
+        <mat-form-field class="flex-2">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" type="text" matInput placeholder="Enter First Name">
+
+
+            <mat-error *ngIf="registrationForm.controls['firstName'].hasError('required')">
+                First Name is required
+            </mat-error>
+            <mat-error *ngIf="registrationForm.controls['firstName'].hasError('pattern') ">
+                Please Enter Valid First Name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="flex-2 flex-2-marg">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" type="text" matInput placeholder="Enter Last Name">
+
+            <mat-error
+                *ngIf="registrationForm.controls['lastName'].hasError('pattern') && !registrationForm.controls['lastName'].hasError('required')">
+                Please Enter Valid Last Name
+            </mat-error>
+            <mat-error *ngIf="registrationForm.controls['lastName'].hasError('required')">
+                Last Name is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" type="email" matInput placeholder="Enter email address">
+            <!-- 
+            <mat-error *ngIf="registrationForm.controls['email'].hasError('email') && !registrationForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+              </mat-error> -->
+            <mat-error
+                *ngIf="registrationForm.controls['email'].hasError('pattern') && !registrationForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="registrationForm.controls['email'].hasError('required')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Contact Number</mat-label>
+            <input type="number" formControlName="mobileNumber" matInput placeholder="Enter Contact Number">
+            <mat-error
+                *ngIf="registrationForm.controls['mobileNumber'].hasError('pattern') && !registrationForm.controls['mobileNumber'].hasError('required')">
+                length has to be 10
+            </mat-error>
+            <mat-error *ngIf="registrationForm.controls['mobileNumber'].hasError('required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Address line 1</mat-label>
+            <input type="text" formControlName="addressLine1" matInput placeholder="Enter Address">
+            <mat-error *ngIf="registrationForm.controls['addressLine1'].hasError('required')">
+                Address is required
+            </mat-error>
+
+        </mat-form-field>
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Address line 2</mat-label>
+            <input type="text" formControlName="addressLine2" matInput placeholder="Enter Address">
+
+        </mat-form-field>
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>City</mat-label>.
+            <input type="text" formControlName="city" matInput placeholder="Enter City">
+
+        </mat-form-field>
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>State</mat-label>
+            <input type="text" formControlName="state" matInput placeholder="Enter State">
+
+        </mat-form-field>
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Country</mat-label>
+            <input type="text" formControlName="country" matInput placeholder="Enter Country">
+
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Postal/Zip Code</mat-label>
+            <input type="number" formControlName="zipCode" matInput placeholder="Enter Zip Code">
+            <mat-error
+                *ngIf="registrationForm.controls['zipCode'].hasError('pattern') && !registrationForm.controls['postalCode'].hasError('required')">
+                lenght has to be 6
+            </mat-error>
+            <mat-error *ngIf="registrationForm.controls['zipCode'].hasError('required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>User Type</mat-label>
+            <select matNativeControl formControlName="userType" matInput name="car">
+                <option value="" selected></option>
+                <option *ngFor="let user of users" [value]="user">
+                    {{user}}
+                </option>
+            </select>
+            <mat-error *ngIf="registrationForm.controls['userType'].hasError('required')">
+                Select User Type
+            </mat-error>
+        </mat-form-field>
+
+        <div class="text-center">
+            <button type="button" mat-raised-button color="primary" [disabled]="registrationForm.invalid"
+                class="login-btn" (click)="registerUser()">Sign Up</button>
+        </div>
+        <p class="text-message">{{message}}</p>
+    </form>
+</div>

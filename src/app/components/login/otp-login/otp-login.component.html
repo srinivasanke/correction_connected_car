@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-lg-4 offset-lg-4">
+            <div class="login-container">
+                <img src="/assets/images/logo-car.png">
+            </div>
+            <div class="text-center my-4">
+                <div class="text-muted">Enter 6-digit code</div>
+            </div>
+            <div class="my-4">
+                <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="configOptions">
+                </ng-otp-input>
+            </div>
+            <button id="button" class="btn btn-light w-50 mt-3 mb-4" (click)="loginOtp()" [ngClass]="btnStatus">
+                {{ this.inputDigitLeft }}
+            </button>
+        </div>
+    </div>
+</div>

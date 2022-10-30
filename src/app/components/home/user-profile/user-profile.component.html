@@ -1,0 +1,27 @@
+<mat-dialog-content>
+    <form class="form-container" [formGroup]="userProfileForm">
+        <h3 class="flex-1 login-title">My Profile</h3>
+        <mat-form-field class="flex-1">
+            <mat-label>NAME</mat-label>
+            <input formControlName="firstName" matInput placeholder="Enter name">
+        </mat-form-field>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>EMAIL ADDRESS</mat-label>
+            <input formControlName="email" matInput placeholder="Enter Email Address">
+            <mat-error
+                *ngIf="userProfileForm.controls['email'].hasError('email') && !userProfileForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="userProfileForm.controls['email'].hasError('required')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="text-center">
+        <button mat-button mat-dialog-close color="primary" [disabled]="userProfileForm.invalid"
+            class="login-btn">Proceed</button>
+    </div>
+</mat-dialog-actions>

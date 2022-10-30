@@ -1,0 +1,81 @@
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    display: inline-block;
+    flex: 60%;
+    width: 50%;
+}
+.formFleid{
+    width: 100%;
+    float: left;
+}
+.reset-btn {
+    border-radius: 20px;
+    width: 50%;
+    float: left;
+    /* text-align: left; */
+}
+.sub-btn{
+    border-radius: 20px;
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-bottom: 20px;
+}
+.btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+.myCar {
+    width: 100%;
+}
+.mat-form-field {
+    width: 95% !important;
+}
+.close-button{
+    float: right;
+    top:-8px;
+    right:-24px;
+    position: sticky;
+    background-color: white !important;
+    border: none;
+  }
+  
+  .container {
+    float: none;
+    max-width: 75%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.cancel{
+    margin-right: 20px;
+}
+.addCar{
+    text-align: center;
+    padding-top: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #1679b9
+}
+.menu{
+    width: 20%;
+    float: left;
+    display: block;
+    background-color: #1679b9;
+    position: relative;
+    top: 50px;
+    /* right: 1%; */
+    height: auto;
+ }
+ .main-container{
+    width: 100%;
+    float: left;
+    display: flex;
+ }

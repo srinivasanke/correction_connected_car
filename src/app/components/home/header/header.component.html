@@ -1,0 +1,77 @@
+<div class="main-container">
+    <div class="header-container">
+        <div class="image-content">
+            <img class="logo-image" src="/assets/images/logo-main.png">
+        </div>
+        <div class="header-content">
+            <h2 class="title">Welcome {{userName}}</h2>
+            <div class="main-menu">
+                <!-- <mat-tab-group>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">home</mat-icon>
+                            Home
+                        </ng-template> 
+                    </mat-tab>
+                    <mat-tab label="Analysis">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">equalizer</mat-icon>
+                            Analysis
+                        </ng-template>Content 2
+                    </mat-tab>
+                    <mat-tab label="Community">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">groups</mat-icon>
+                            Community
+                        </ng-template> Content 3
+                    </mat-tab>
+                    <mat-tab label="Location">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="example-tab-icon">person_pin_circle</mat-icon>
+                            Location
+                        </ng-template> Content 3
+                    </mat-tab>
+                </mat-tab-group> -->
+                <button mat-button class="menu-item">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><span
+                        class="menu-text">Home</span>
+                </button>
+
+                 <button mat-button class="menu-item">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">equalizer</mat-icon><span
+                        class="menu-text">Analysis</span>
+                </button>
+
+                <button mat-button class="menu-item">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">groups</mat-icon><span
+                        class="menu-text">Community</span>
+                </button>
+
+                <button mat-button class="menu-item">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">person_pin_circle</mat-icon><span
+                        class="menu-text">Location</span>
+                </button>
+            </div>
+            <div class="right-section menu-item">
+                <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+                <div class="user-profile">
+
+                    <mat-icon [matMenuTriggerFor]="menu">person</mat-icon>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="openDialog()">My Profile</button>
+                        <button mat-menu-item (click)="carInfo()">My Car</button>
+                        <button mat-menu-item (click)="openCarRegister()">Add Car</button>
+                        <button mat-menu-item (click)="listCar()">Car List</button>
+                        <button mat-menu-item>Trip</button>
+                        <button mat-menu-item>Document Wallet</button>
+                        <button mat-menu-item>Badge</button>
+                        <button mat-menu-item>Alerts</button>
+                        <button mat-menu-item>Settings</button>
+                        <button mat-menu-item (click)="logOut()">Logout</button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   

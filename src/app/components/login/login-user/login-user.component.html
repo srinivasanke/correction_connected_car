@@ -1,0 +1,46 @@
+<div class="login-container">
+    <div class="text-center logo-content">
+        <img src="/assets/images/logo-car.png">
+    </div>
+    <form class="form-container" [formGroup]="loginForm">
+        <h3 class="flex-1 login-title">Login</h3>
+
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>EMAIL ADDRESS</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Enter Email Address">
+            <mat-error
+                *ngIf="loginForm.controls['email'].hasError('email') && !loginForm.controls['email'].hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="flex-1">
+            <mat-label>PASSWORD</mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Enter Password">
+            <mat-error
+                *ngIf="loginForm.controls['password'].hasError('minlength') && !loginForm.controls['password'].hasError('required')">
+                Minimum length is 8
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+
+        <div class="flex-1">
+            <mat-error *ngIf="loginForm.valid && invalidUserMsg">{{invalidUserMsg}}</mat-error>
+        </div>
+        <button type="button" mat-button color="primary"><a routerLink="/login/reset">Forget Password</a></button>
+        <button type="button" mat-button color="primary"><a routerLink="/login/otp">Login with OTP</a></button>
+        <div class="text-center">
+            <button type="button" mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="loginUser()"
+                class="login-btn">Login</button>
+        </div>
+        <div class="text-center">
+            <span>DON'T HAVE AN ACCOUNT?</span>
+            <button type="button" mat-button color="primary"><a routerLink="/login/register">Sign Up</a></button>
+        </div>
+    </form>
+</div>

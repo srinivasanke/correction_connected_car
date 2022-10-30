@@ -1,0 +1,163 @@
+<app-header></app-header>
+<div class="main-container">
+    <div class="menu">
+      <app-menu></app-menu>
+    </div>
+<!-- <h2 class="addCar">ADD CAR</h2> -->
+<div class="container">
+    <form class="form-container" [formGroup]="carRegistrationForm">
+        <div class="myCar" formGroupName= "car">
+            <h2 class="addCar">ADD CAR</h2>
+        <h3 class="login-title">1. Car Details</h3>
+        <div class="formFleid">
+            <div  class="flex-1">
+        <mat-form-field>
+            <mat-label>Vin</mat-label>
+            <input type="text" formControlName="vin" matInput placeholder="Enter Vin">
+            <mat-error *ngIf="!carRegistrationForm.get('vin')">
+                Vin is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+            <div  class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Dealer</mat-label>
+            <input type="text" formControlName="dealer" matInput placeholder="Enter Dealer">
+            <mat-error *ngIf="!carRegistrationForm.get('dealer')">
+                Dealer is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+        </div>
+        <div class="formFleid">
+            <div class="flex-1 ">
+        <mat-form-field class="mb-10">
+            <mat-label>Dealer City</mat-label>
+            <input type="text" formControlName="dealerCity" matInput placeholder="Enter Dealer City">
+            <mat-error *ngIf="!carRegistrationForm.get('dealerCity')">
+                Dealer City is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+        <div class="flex-1 ">
+        <mat-form-field class="mb-10">
+            <mat-label>Model Name</mat-label>
+            <input type="text" formControlName="modelName" matInput placeholder="Enter Model Name">
+            <mat-error *ngIf="!carRegistrationForm.get('modelName')">
+                Model Name is required
+            </mat-error>
+        </mat-form-field>
+        </div>
+            </div>
+            <div class="formFleid">
+                <div class="flex-1 ">
+        <mat-form-field class="mb-10">
+            <mat-label>Description</mat-label>
+            <input type="text" formControlName="description" matInput placeholder="Enter Description">
+            <mat-error *ngIf="!carRegistrationForm.get('description')">
+                Description is required
+            </mat-error>
+        </mat-form-field>
+                </div>
+                <div class="flex-1 "> 
+        <mat-form-field class="flex-1 mb-10">
+            <mat-label>Registration Number</mat-label>
+            <input type="text" formControlName="registrationNumber" matInput placeholder="Enter Registration Number">
+            <mat-error *ngIf="!carRegistrationForm.get('registrationNumber')">
+                Registration Number is required
+            </mat-error>
+        </mat-form-field>
+                </div>
+            </div>
+            <div class="formFleid">
+                <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Sold On</mat-label>
+            <input type="date" formControlName="soldOn" matInput placeholder="Enter Sold On">
+            <mat-error *ngIf="!carRegistrationForm.get('soldOn')">
+                Sold On is required
+            </mat-error>
+        </mat-form-field>
+                </div>
+                <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Manufacture Year</mat-label>
+            <input type="text" formControlName="manufactureYear" matInput placeholder="Enter Manufacture Year">
+            <mat-error *ngIf="!carRegistrationForm.get('manufactureYear')">
+                Manufacture Year is required
+            </mat-error>
+        </mat-form-field>
+                </div>
+            </div>
+            <div class="formFleid">
+                <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Dongle Id</mat-label>
+            <input type="text" formControlName="dongleId" matInput placeholder="Enter Dongle Id">
+            <mat-error *ngIf="!carRegistrationForm.get('dongleId')">
+                Dongle Id is required
+            </mat-error>
+        </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="myCar" formGroupName= "user">
+        <h3 class="login-title">2. Owner Details</h3>
+        <div class="formFleid">
+            <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Email</mat-label>
+            <input type="email" formControlName="email" matInput placeholder="Enter Email">
+            <mat-error *ngIf="!carRegistrationForm.get('email')">
+                Email is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+            <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>First Name</mat-label>
+            <input type="text" formControlName="firstName" matInput placeholder="Enter First Name">
+            <mat-error *ngIf="!carRegistrationForm.get('firstName')">
+                First Name is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+        </div>
+        <div class="formFleid">
+            <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Last Name</mat-label>
+            <input type="text" formControlName="lastName" matInput placeholder="Enter Last Name">
+            <mat-error *ngIf="!carRegistrationForm.get('lastName')">
+                Last Name is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+            <div class="flex-1">
+        <mat-form-field class="mb-10">
+            <mat-label>Mobile Number</mat-label>
+            <input type="tel" formControlName="mobileNumber" matInput placeholder="Enter Mobile Number">
+            <mat-error *ngIf="!carRegistrationForm.get('mobileNumber')">
+                Mobile Number is required
+            </mat-error>
+        </mat-form-field>
+            </div>
+        </div>
+        </div>
+    </form>
+
+
+    <div class="btn">
+        <div class="reset-btn">
+        <button mat-raised-button color="warn"
+             (click)="resetForm()">Reset</button>
+        </div>
+        <div class="sub-btn">
+            <button mat-raised-button color="warn" class="cancel"
+             (click)="cancel()">Cancel</button>
+            <button mat-raised-button color="primary" [disabled]="carRegistrationForm.invalid"
+             (click)="createCar()">Proceed</button>
+        </div>
+    </div>
+</div>
+</div>

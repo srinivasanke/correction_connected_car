@@ -1,0 +1,150 @@
+.heading {
+    color: #1679b9;
+    font-size: x-large;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 21%;
+}
+
+.myTable {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+}
+
+.table {
+    overflow-y: scroll;
+    height: 503px;
+    width: 30%;
+    display: inline-block;
+    border: 1px solid cadetblue;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.tab td {
+    display: block;
+    background-color: inherit;
+    color: #1679b9;
+    padding: 18px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab td:hover {
+    background-color: #ddd;
+}
+
+.tab td.active {
+    background-color: #ccc;
+}
+
+.box-container {
+    margin-top: 5px;
+    display: inline-block;
+    margin-left: -50px;
+}
+
+.car-connected-info {
+    width: 100%;
+}
+
+.status-cirlce,
+.status-end {
+    border: 5px solid #1679b9;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: 150px;
+    margin-top: 60px;
+}
+
+.icon-div {
+    display: inline-block;
+}
+
+.status-cirlce::before {
+    content: "";
+    border-top: 2px solid #1679b9;
+    position: absolute;
+    width: 150px;
+    margin-left: 75px;
+    margin-top: 40px;
+}
+
+.car-title {
+    float: right;
+    margin-right: 191px;
+    margin-bottom: -60px;
+    color: #1679b9;
+    font-size: 17px;
+}
+
+.status-image {
+    width: 49px;
+    height: 50px;
+    padding: 0px;
+    position: relative;
+    left: 16%;
+    top: 9px;
+}
+
+.car-details {
+    margin-left: 11px;
+    margin-top: 10px;
+}
+
+.car-connected-info {
+    width: 100%;
+    margin-top: -10px;
+    margin-left: 50px;
+}
+
+.car-data {
+    margin-top: 33px;
+}
+
+.total-history {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 150px;
+}
+
+.status-info {
+    padding: 5px;
+    color: #1679b9;
+}
+
+.flex-1 {
+    display: block;
+    flex: 100%;
+}
+
+.flex-2 {
+    flex: 50%;
+}
+
+.status-msg {
+    color: #1679b9;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-right: 50px;
+}
+
+.carinfo {
+    margin-left: -120px;
+}

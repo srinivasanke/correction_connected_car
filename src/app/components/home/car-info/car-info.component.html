@@ -1,0 +1,130 @@
+<app-dashboard [notMenuBar]="notMenuBar"></app-dashboard>
+
+<h1 class="heading">Connected Car</h1>
+
+<div class="table">
+    <table class="tab myTable">
+        <tbody>
+            <tr *ngFor="let carLists of carList">
+                <td (click)="carInfo(carLists)">{{carLists.modelName}} {{carLists.registrationNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="box-container">
+    <div class="car-connected">
+        <div class="car-details">
+            <h4 class="status-msg car-title">{{modelName}} {{registrationNumber}}</h4>
+        </div>
+        <div class="car-connected-info">
+            <div class="status-cirlce icon-div">
+                <img class="status-image" src="/assets/images/system.png">
+                <div class="status-msg">
+                    <p class="car-data">No errors</p>
+                </div>
+            </div>
+            <div class="status-cirlce icon-div">
+                <img class="status-image" src="/assets/images/km.png">
+                <div class="status-msg">
+                    <p class="car-data">1526kms</p>
+                </div>
+            </div>
+            <div class="status-end icon-div">
+                <img class="status-image" src="/assets/images/connected.png">
+                <div class="status-msg">
+                    <p class="car-data">Connected</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="car-connected-info">
+        <div class="total-history">
+            <h4 class="status-info flex-1">Total History :</h4>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Car Driven</label>
+                    </div>
+                    <span class="carinfo"> 1 hours 10 min</span>
+                </div>
+            </div>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Total Distance</label>
+                    </div>
+                    <span class="carinfo"> 51.2 kms</span>
+                </div>
+            </div>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Fuel Consumption</label>
+                    </div>
+                    <span class="carinfo"> 7 litres</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="box-container">
+    <div class="car-connected">
+        <h4 class="status-msg car-title">{{modelName}} {{registrationNumber}}</h4>
+        <div class="car-connected-info">
+            <div class="status-cirlce">
+                <img class="status-image" src="/assets/images/system.png">
+                <div class="status-msg">
+                    <p>No errors</p>
+                </div>
+            </div>
+            <div class="status-cirlce">
+                <img class="status-image" src="/assets/images/km.png">
+                <div class="status-msg">
+                    <p>1526kms</p>
+                </div>
+            </div>
+            <div class="status-end">
+                <img class="status-image" src="/assets/images/connected.png">
+                <div class="status-msg">
+                    <p>Connected</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="car-connected-info">
+        <div class="total-history">
+            <h4 class="status-info flex-1">Total History :</h4>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Car Driven</label>
+                    </div>
+                    <span class=""> 1 hours 10 min</span>
+                </div>
+            </div>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Total Distance</label>
+                    </div>
+                    <span> 51.2 kms</span>
+                </div>
+            </div>
+            <div class="flex-1 mb-10">
+                <div class="flex-container">
+                    <div class="flex-2">
+                        <label class="status-info">Fuel Consumption</label>
+                    </div>
+                    <span> 7 litres</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
