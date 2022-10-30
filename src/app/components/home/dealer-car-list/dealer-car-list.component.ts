@@ -18,7 +18,15 @@ export interface carList {
   soldOn: Date;
   
 }
-const carData: carList[] =  [];
+const carData: carList[] =  [
+{carId:1, modelName:"Audi", vin:"uhjyu12h3hg45nbm4",registrationNumber:"AP03 CB 2341",dongleId:"087",soldOn:"12-08-2022"},
+  {carId:2, modelName:"Audi", vin:"uhjyu12h3hg45nbm6",registrationNumber:"AP03 CB 2351",dongleId:"086",soldOn:"13-08-2022"},
+  {carId:3, modelName:"Tata", vin:"uhjyu12h3hg45nbm5",registrationNumber:"AP03 CB 2361",dongleId:"085",soldOn:"14-08-2022"},
+  {carId:4, modelName:"Audi", vin:"uhjyu12h3hg45nbm9",registrationNumber:"AP03 CB 2371",dongleId:"084",soldOn:"15-08-2022"},
+  {carId:5, modelName:"BMW", vin:"uhjyu12h3hg45nbm3",registrationNumber:"AP03 CB 2391",dongleId:"083",soldOn:"16-08-2022"},
+  {carId:6, modelName:"Audo", vin:"uhjyu12h3hg45nbm7",registrationNumber:"AP03 CB 2301",dongleId:"082",soldOn:"17-08-2022"},
+  {carId:7, modelName:"Audo", vin:"uhjyu12h3hg45nbm0",registrationNumber:"AP03 CB 2331",dongleId:"081",soldOn:"18-08-2022"}
+];
 
 @Component({
   selector: 'app-dealer-car-list',
@@ -48,14 +56,14 @@ get toDateVal() {
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private route:Router,private allCar: CarListService) {
-    this.allCar.getCar().subscribe(res => {
-      this.dataSource = new MatTableDataSource(res.data.cars);
+//     this.allCar.getCar().subscribe(res => {
+//       this.dataSource = new MatTableDataSource(res.data.cars);
       // this.filterDate = new MatTableDataSource(res.data.cars.soldOn);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       // console.log(res);
       // console.log(this.dataSource);
-  })
+//   })
   // this.pipe = new DatePipe('en');
   // this.dataSource.filterPredicate = (data) =>{
   //   if (this.fromDate && this.toDate) {
